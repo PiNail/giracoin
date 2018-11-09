@@ -358,8 +358,8 @@ void GiracoinApplication::createWindow(const NetworkStyle *networkStyle)
 {
     window = new GiracoinGUI(platformStyle, networkStyle, 0);
 
-    LoginDialog* loginDialog = new LoginDialog(window);
-    loginDialog->show();
+    //LoginDialog* loginDialog = new LoginDialog(window);
+    //loginDialog->show();
 
     pollShutdownTimer = new QTimer(window);
     connect(pollShutdownTimer, SIGNAL(timeout()), window, SLOT(detectShutdown()));

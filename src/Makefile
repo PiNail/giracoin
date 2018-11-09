@@ -89,16 +89,16 @@ NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = x86_64-pc-linux-gnu
-host_triplet = x86_64-pc-linux-gnu
+host_triplet = i686-w64-mingw32
 bin_PROGRAMS = $(am__EXEEXT_1) $(am__EXEEXT_2) $(am__EXEEXT_3) \
 	$(am__EXEEXT_4) $(am__EXEEXT_5) $(am__EXEEXT_6)
 TESTS = $(am__EXEEXT_3) $(am__EXEEXT_6)
 am__append_1 = giracoind
 am__append_2 = giracoin-cli giracoin-tx
 #am__append_3 = compat/glibc_compat.cpp
-#am__append_4 = giracoind-res.rc
-#am__append_5 = giracoin-cli-res.rc
-#am__append_6 = giracoin-tx-res.rc
+am__append_4 = giracoind-res.rc
+am__append_5 = giracoin-cli-res.rc
+am__append_6 = giracoin-tx-res.rc
 #am__append_7 = compat/glibc_compat.cpp
 am__append_8 = $(LIBLEVELDB_INT) \
 	$(LIBMEMENV_INT)
@@ -106,11 +106,11 @@ am__append_9 = $(LIBLEVELDB_INT)
 am__append_10 = $(LIBMEMENV_INT)
 am__append_11 = -I$(srcdir)/leveldb/include \
 	-I$(srcdir)/leveldb/helpers/memenv
-#am__append_12 = -DLEVELDB_PLATFORM_WINDOWS -DWINVER=0x0500 -D__USE_MINGW_ANSI_STDIO=1
-am__append_13 = -DLEVELDB_PLATFORM_POSIX
-#am__append_14 = leveldb/util/env_win.cc \
-#	leveldb/port/port_win.cc
-am__append_15 = leveldb/port/port_posix.cc
+am__append_12 = -DLEVELDB_PLATFORM_WINDOWS -DWINVER=0x0500 -D__USE_MINGW_ANSI_STDIO=1
+#am__append_13 = -DLEVELDB_PLATFORM_POSIX
+am__append_14 = leveldb/util/env_win.cc \
+	leveldb/port/port_win.cc
+#am__append_15 = leveldb/port/port_posix.cc
 am__append_16 = test/test_giracoin
 am__append_17 = test/test_giracoin
 am__append_18 = \
@@ -139,33 +139,33 @@ am__append_19 = \
   wallet/test/rpc_wallet_tests.cpp
 
 am__append_20 = $(LIBGIRACOIN_WALLET)
-am__append_21 = $(ZMQ_LIBS)
+#am__append_21 = $(ZMQ_LIBS)
 am__append_22 = $(CLEAN_GIRACOIN_TEST)
 
 # This file is problematic for out-of-tree builds if it exists.
 am__append_23 = test/buildenv.pyc
 am__append_24 = bench/bench_giracoin
-am__append_25 = $(LIBGIRACOIN_ZMQ) $(ZMQ_LIBS)
+#am__append_25 = $(LIBGIRACOIN_ZMQ) $(ZMQ_LIBS)
 am__append_26 = $(LIBGIRACOIN_WALLET)
 am__append_27 = $(CLEAN_GIRACOIN_BENCH)
-#am__append_28 = qt/giracoin-qt
-#am__append_29 = qt/libgiracoinqt.a
-##am__append_30 = $(GIRACOIN_QT_WINDOWS_CPP)
-#am__append_31 = $(GIRACOIN_QT_WALLET_CPP)
-##am__append_32 = $(GIRACOIN_MM)
-##am__append_33 = $(GIRACOIN_RC)
-#am__append_34 = $(LIBGIRACOIN_WALLET)
+am__append_28 = qt/giracoin-qt
+am__append_29 = qt/libgiracoinqt.a
+am__append_30 = $(GIRACOIN_QT_WINDOWS_CPP)
+am__append_31 = $(GIRACOIN_QT_WALLET_CPP)
+#am__append_32 = $(GIRACOIN_MM)
+am__append_33 = $(GIRACOIN_RC)
+am__append_34 = $(LIBGIRACOIN_WALLET)
 #am__append_35 = $(LIBGIRACOIN_ZMQ) $(ZMQ_LIBS)
-#am__append_36 = $(CLEAN_QT)
-#am__append_37 = qt/test/test_giracoin-qt
-#am__append_38 = qt/test/test_giracoin-qt
-#am__append_39 = qt/test/moc_paymentservertests.cpp
-#am__append_40 = \
-#  qt/test/paymentservertests.cpp
+am__append_36 = $(CLEAN_QT)
+am__append_37 = qt/test/test_giracoin-qt
+am__append_38 = qt/test/test_giracoin-qt
+am__append_39 = qt/test/moc_paymentservertests.cpp
+am__append_40 = \
+  qt/test/paymentservertests.cpp
 
-#am__append_41 = $(LIBGIRACOIN_WALLET)
+am__append_41 = $(LIBGIRACOIN_WALLET)
 #am__append_42 = $(LIBGIRACOIN_ZMQ) $(ZMQ_LIBS)
-#am__append_43 = $(CLEAN_GIRACOIN_QT_TEST)
+am__append_43 = $(CLEAN_GIRACOIN_QT_TEST)
 subdir = src
 SUBDIRS =
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -272,9 +272,9 @@ am__leveldb_libleveldb_a_SOURCES_DIST = leveldb/port/atomic_pointer.h \
 	leveldb/util/histogram.cc leveldb/util/logging.cc \
 	leveldb/util/options.cc leveldb/util/status.cc \
 	leveldb/port/port_win.cc leveldb/port/port_posix.cc
-#am__objects_1 = leveldb/util/leveldb_libleveldb_a-env_win.$(OBJEXT) \
-#	leveldb/port/leveldb_libleveldb_a-port_win.$(OBJEXT)
-am__objects_2 = leveldb/port/leveldb_libleveldb_a-port_posix.$(OBJEXT)
+am__objects_1 = leveldb/util/leveldb_libleveldb_a-env_win.$(OBJEXT) \
+	leveldb/port/leveldb_libleveldb_a-port_win.$(OBJEXT)
+#am__objects_2 = leveldb/port/leveldb_libleveldb_a-port_posix.$(OBJEXT)
 am_leveldb_libleveldb_a_OBJECTS = leveldb/db/leveldb_libleveldb_a-builder.$(OBJEXT) \
 	leveldb/db/leveldb_libleveldb_a-c.$(OBJEXT) \
 	leveldb/db/leveldb_libleveldb_a-dbformat.$(OBJEXT) \
@@ -465,9 +465,9 @@ libgiracoin_zmq_a_AR = $(AR) $(ARFLAGS)
 libgiracoin_zmq_a_LIBADD =
 am__libgiracoin_zmq_a_SOURCES_DIST = zmq/zmqabstractnotifier.cpp \
 	zmq/zmqnotificationinterface.cpp zmq/zmqpublishnotifier.cpp
-am_libgiracoin_zmq_a_OBJECTS = zmq/libgiracoin_zmq_a-zmqabstractnotifier.$(OBJEXT) \
-	zmq/libgiracoin_zmq_a-zmqnotificationinterface.$(OBJEXT) \
-	zmq/libgiracoin_zmq_a-zmqpublishnotifier.$(OBJEXT)
+#am_libgiracoin_zmq_a_OBJECTS = zmq/libgiracoin_zmq_a-zmqabstractnotifier.$(OBJEXT) \
+#	zmq/libgiracoin_zmq_a-zmqnotificationinterface.$(OBJEXT) \
+#	zmq/libgiracoin_zmq_a-zmqpublishnotifier.$(OBJEXT)
 libgiracoin_zmq_a_OBJECTS = $(am_libgiracoin_zmq_a_OBJECTS)
 qt_libgiracoinqt_a_AR = $(AR) $(ARFLAGS)
 qt_libgiracoinqt_a_LIBADD =
@@ -596,120 +596,120 @@ am__qt_libgiracoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 	qt/res/icons/warning.png qt/res/icons/verify.png \
 	qt/res/icons/transaction_abandoned.png $(wildcard \
 	qt/res/movies/spinner-*.png)
-#am__objects_5 =  \
-#	qt/qt_libgiracoinqt_a-bantablemodel.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-giracoinaddressvalidator.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-giracoinamountfield.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-giracoingui.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-giracoinunits.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-clientmodel.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-csvmodelwriter.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-guiutil.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-intro.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-networkstyle.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-notificator.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-optionsdialog.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-optionsmodel.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-peertablemodel.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-platformstyle.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-qvalidatedlineedit.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-qvaluecombobox.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-rpcconsole.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-splashscreen.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-trafficgraphwidget.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-utilitydialog.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-logindialog.$(OBJEXT)
-#am__objects_6 = qt/qt_libgiracoinqt_a-winshutdownmonitor.$(OBJEXT)
-##am__objects_7 = $(am__objects_6)
-#am__objects_8 = qt/qt_libgiracoinqt_a-addressbookpage.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-addresstablemodel.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-askpassphrasedialog.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-coincontroldialog.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-coincontroltreewidget.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-editaddressdialog.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-openuridialog.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-overviewpage.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-paymentrequestplus.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-paymentserver.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-receivecoinsdialog.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-receiverequestdialog.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-recentrequeststablemodel.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-sendcoinsdialog.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-sendcoinsentry.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-signverifymessagedialog.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-transactiondesc.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-transactiondescdialog.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-transactionfilterproxy.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-transactionrecord.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-transactiontablemodel.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-transactionview.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-walletframe.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-walletmodel.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-walletmodeltransaction.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-walletview.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-logindialog.$(OBJEXT)
-#am__objects_9 = $(am__objects_8)
-#am__objects_10 = $(am__objects_5) $(am__objects_7) \
-#	$(am__objects_9)
-#am_qt_libgiracoinqt_a_OBJECTS = $(am__objects_10) \
-#	$(am__objects_3) $(am__objects_3) \
-#	$(am__objects_3) $(am__objects_3) \
-#	$(am__objects_3) $(am__objects_3) \
-#	$(am__objects_3) $(am__objects_3) \
-#	$(am__objects_3)
-#am__objects_11 = qt/qt_libgiracoinqt_a-moc_addressbookpage.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_addresstablemodel.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_askpassphrasedialog.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_bantablemodel.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_giracoinaddressvalidator.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_giracoinamountfield.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_giracoingui.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_giracoinunits.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_clientmodel.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_coincontroldialog.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_coincontroltreewidget.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_csvmodelwriter.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_editaddressdialog.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_guiutil.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_intro.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_macdockiconhandler.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_macnotificationhandler.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_notificator.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_openuridialog.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_optionsdialog.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_optionsmodel.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_overviewpage.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_peertablemodel.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_paymentserver.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_qvalidatedlineedit.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_qvaluecombobox.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_receivecoinsdialog.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_receiverequestdialog.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_recentrequeststablemodel.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_rpcconsole.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_sendcoinsdialog.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_sendcoinsentry.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_signverifymessagedialog.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_splashscreen.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_trafficgraphwidget.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_transactiondesc.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_transactiondescdialog.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_transactionfilterproxy.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_transactiontablemodel.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_transactionview.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_utilitydialog.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_walletframe.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_walletmodel.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_walletview.$(OBJEXT) \
-#	qt/qt_libgiracoinqt_a-moc_logindialog.$(OBJEXT)
-#am__objects_12 = qt/qt_libgiracoinqt_a-paymentrequest.pb.$(OBJEXT)
-#am__objects_13 =  \
-#	qt/qt_libgiracoinqt_a-qrc_giracoin.$(OBJEXT)
-#am__objects_14 = qt/qt_libgiracoinqt_a-qrc_giracoin_locale.$(OBJEXT)
-#nodist_qt_libgiracoinqt_a_OBJECTS = $(am__objects_11) \
-#	$(am__objects_3) $(am__objects_12) \
-#	$(am__objects_3) $(am__objects_13) \
-#	$(am__objects_14)
+am__objects_5 =  \
+	qt/qt_libgiracoinqt_a-bantablemodel.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-giracoinaddressvalidator.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-giracoinamountfield.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-giracoingui.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-giracoinunits.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-clientmodel.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-csvmodelwriter.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-guiutil.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-intro.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-networkstyle.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-notificator.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-optionsdialog.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-optionsmodel.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-peertablemodel.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-platformstyle.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-qvalidatedlineedit.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-qvaluecombobox.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-rpcconsole.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-splashscreen.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-trafficgraphwidget.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-utilitydialog.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-logindialog.$(OBJEXT)
+am__objects_6 = qt/qt_libgiracoinqt_a-winshutdownmonitor.$(OBJEXT)
+am__objects_7 = $(am__objects_6)
+am__objects_8 = qt/qt_libgiracoinqt_a-addressbookpage.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-addresstablemodel.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-askpassphrasedialog.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-coincontroldialog.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-coincontroltreewidget.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-editaddressdialog.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-openuridialog.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-overviewpage.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-paymentrequestplus.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-paymentserver.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-receivecoinsdialog.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-receiverequestdialog.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-recentrequeststablemodel.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-sendcoinsdialog.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-sendcoinsentry.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-signverifymessagedialog.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-transactiondesc.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-transactiondescdialog.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-transactionfilterproxy.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-transactionrecord.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-transactiontablemodel.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-transactionview.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-walletframe.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-walletmodel.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-walletmodeltransaction.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-walletview.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-logindialog.$(OBJEXT)
+am__objects_9 = $(am__objects_8)
+am__objects_10 = $(am__objects_5) $(am__objects_7) \
+	$(am__objects_9)
+am_qt_libgiracoinqt_a_OBJECTS = $(am__objects_10) \
+	$(am__objects_3) $(am__objects_3) \
+	$(am__objects_3) $(am__objects_3) \
+	$(am__objects_3) $(am__objects_3) \
+	$(am__objects_3) $(am__objects_3) \
+	$(am__objects_3)
+am__objects_11 = qt/qt_libgiracoinqt_a-moc_addressbookpage.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_addresstablemodel.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_askpassphrasedialog.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_bantablemodel.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_giracoinaddressvalidator.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_giracoinamountfield.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_giracoingui.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_giracoinunits.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_clientmodel.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_coincontroldialog.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_coincontroltreewidget.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_csvmodelwriter.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_editaddressdialog.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_guiutil.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_intro.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_macdockiconhandler.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_macnotificationhandler.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_notificator.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_openuridialog.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_optionsdialog.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_optionsmodel.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_overviewpage.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_peertablemodel.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_paymentserver.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_qvalidatedlineedit.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_qvaluecombobox.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_receivecoinsdialog.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_receiverequestdialog.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_recentrequeststablemodel.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_rpcconsole.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_sendcoinsdialog.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_sendcoinsentry.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_signverifymessagedialog.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_splashscreen.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_trafficgraphwidget.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_transactiondesc.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_transactiondescdialog.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_transactionfilterproxy.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_transactiontablemodel.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_transactionview.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_utilitydialog.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_walletframe.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_walletmodel.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_walletview.$(OBJEXT) \
+	qt/qt_libgiracoinqt_a-moc_logindialog.$(OBJEXT)
+am__objects_12 = qt/qt_libgiracoinqt_a-paymentrequest.pb.$(OBJEXT)
+am__objects_13 =  \
+	qt/qt_libgiracoinqt_a-qrc_giracoin.$(OBJEXT)
+am__objects_14 = qt/qt_libgiracoinqt_a-qrc_giracoin_locale.$(OBJEXT)
+nodist_qt_libgiracoinqt_a_OBJECTS = $(am__objects_11) \
+	$(am__objects_3) $(am__objects_12) \
+	$(am__objects_3) $(am__objects_13) \
+	$(am__objects_14)
 qt_libgiracoinqt_a_OBJECTS = $(am_qt_libgiracoinqt_a_OBJECTS) \
 	$(nodist_qt_libgiracoinqt_a_OBJECTS)
 am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
@@ -799,9 +799,9 @@ am__EXEEXT_2 = giracoin-cli$(EXEEXT) \
 	giracoin-tx$(EXEEXT)
 am__EXEEXT_3 = test/test_giracoin$(EXEEXT)
 am__EXEEXT_4 = bench/bench_giracoin$(EXEEXT)
-#am__EXEEXT_5 = qt/giracoin-qt$(EXEEXT)
-#am__EXEEXT_6 =  \
-#	qt/test/test_giracoin-qt$(EXEEXT)
+am__EXEEXT_5 = qt/giracoin-qt$(EXEEXT)
+am__EXEEXT_6 =  \
+	qt/test/test_giracoin-qt$(EXEEXT)
 PROGRAMS = $(bin_PROGRAMS)
 am__bench_bench_giracoin_SOURCES_DIST = bench/bench_giracoin.cpp \
 	bench/bench.cpp bench/bench.h bench/Examples.cpp \
@@ -818,9 +818,9 @@ am__DEPENDENCIES_2 = $(am__append_10)
 am__DEPENDENCIES_3 =
 #am__DEPENDENCIES_4 = $(am__DEPENDENCIES_3)
 am__DEPENDENCIES_4 = univalue/libunivalue.la
-am__DEPENDENCIES_5 =  \
-	$(LIBGIRACOIN_ZMQ) \
-	$(am__DEPENDENCIES_3)
+#am__DEPENDENCIES_5 =  \
+#	$(LIBGIRACOIN_ZMQ) \
+#	$(am__DEPENDENCIES_3)
 bench_bench_giracoin_DEPENDENCIES =  \
 	$(LIBGIRACOIN_SERVER) $(LIBGIRACOIN_COMMON) \
 	$(LIBGIRACOIN_UTIL) \
@@ -837,7 +837,7 @@ bench_bench_giracoin_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(bench_bench_giracoin_CXXFLAGS) $(CXXFLAGS) \
 	$(bench_bench_giracoin_LDFLAGS) $(LDFLAGS) -o $@
 am__giracoin_cli_SOURCES_DIST = giracoin-cli.cpp giracoin-cli-res.rc
-#am__objects_18 = giracoin-cli-res.$(OBJEXT)
+am__objects_18 = giracoin-cli-res.$(OBJEXT)
 am_giracoin_cli_OBJECTS = giracoin_cli-giracoin-cli.$(OBJEXT) \
 	$(am__objects_18)
 giracoin_cli_OBJECTS = $(am_giracoin_cli_OBJECTS)
@@ -849,7 +849,7 @@ giracoin_cli_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(giracoin_cli_CXXFLAGS) \
 	$(CXXFLAGS) $(giracoin_cli_LDFLAGS) $(LDFLAGS) -o $@
 am__giracoin_tx_SOURCES_DIST = giracoin-tx.cpp giracoin-tx-res.rc
-#am__objects_19 = giracoin-tx-res.$(OBJEXT)
+am__objects_19 = giracoin-tx-res.$(OBJEXT)
 am_giracoin_tx_OBJECTS = giracoin_tx-giracoin-tx.$(OBJEXT) \
 	$(am__objects_19)
 giracoin_tx_OBJECTS = $(am_giracoin_tx_OBJECTS)
@@ -861,7 +861,7 @@ giracoin_tx_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(giracoin_tx_CXXFLAGS) \
 	$(CXXFLAGS) $(giracoin_tx_LDFLAGS) $(LDFLAGS) -o $@
 am__giracoind_SOURCES_DIST = giracoind.cpp giracoind-res.rc
-#am__objects_20 = giracoind-res.$(OBJEXT)
+am__objects_20 = giracoind-res.$(OBJEXT)
 am_giracoind_OBJECTS = giracoind-giracoind.$(OBJEXT) $(am__objects_20)
 giracoind_OBJECTS = $(am_giracoind_OBJECTS)
 giracoind_DEPENDENCIES = $(LIBGIRACOIN_SERVER) $(LIBGIRACOIN_COMMON) \
@@ -879,33 +879,33 @@ giracoind_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
 am__qt_giracoin_qt_SOURCES_DIST = qt/giracoin.cpp \
 	qt/macdockiconhandler.mm qt/macnotificationhandler.mm \
 	qt/res/giracoin-qt-res.rc
-#am__objects_21 = qt/qt_giracoin_qt-macdockiconhandler.$(OBJEXT) \
-#	qt/qt_giracoin_qt-macnotificationhandler.$(OBJEXT)
-##am__objects_22 =  \
-##	$(am__objects_21)
-#am__objects_23 = qt/res/giracoin-qt-res.$(OBJEXT)
-##am__objects_24 =  \
-##	$(am__objects_23)
-#am_qt_giracoin_qt_OBJECTS =  \
-#	qt/qt_giracoin_qt-giracoin.$(OBJEXT) \
-#	$(am__objects_22) $(am__objects_24)
+am__objects_21 = qt/qt_giracoin_qt-macdockiconhandler.$(OBJEXT) \
+	qt/qt_giracoin_qt-macnotificationhandler.$(OBJEXT)
+#am__objects_22 =  \
+#	$(am__objects_21)
+am__objects_23 = qt/res/giracoin-qt-res.$(OBJEXT)
+am__objects_24 =  \
+	$(am__objects_23)
+am_qt_giracoin_qt_OBJECTS =  \
+	qt/qt_giracoin_qt-giracoin.$(OBJEXT) \
+	$(am__objects_22) $(am__objects_24)
 qt_giracoin_qt_OBJECTS = $(am_qt_giracoin_qt_OBJECTS)
 #am__DEPENDENCIES_6 =  \
 #	$(LIBGIRACOIN_ZMQ) \
 #	$(am__DEPENDENCIES_3)
-#qt_giracoin_qt_DEPENDENCIES = qt/libgiracoinqt.a \
-#	$(LIBGIRACOIN_SERVER) $(am__append_34) \
-#	$(am__DEPENDENCIES_6) $(LIBGIRACOIN_CLI) \
-#	$(LIBGIRACOIN_COMMON) $(LIBGIRACOIN_UTIL) \
-#	$(LIBGIRACOIN_CONSENSUS) $(LIBGIRACOIN_CRYPTO) \
-#	$(am__DEPENDENCIES_4) $(am__DEPENDENCIES_1) \
-#	$(am__DEPENDENCIES_2) $(am__DEPENDENCIES_3) \
-#	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
-#	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
-#	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
-#	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
-#	$(LIBSECP256K1) $(am__DEPENDENCIES_3) \
-#	$(am__DEPENDENCIES_3)
+qt_giracoin_qt_DEPENDENCIES = qt/libgiracoinqt.a \
+	$(LIBGIRACOIN_SERVER) $(am__append_34) \
+	$(am__DEPENDENCIES_6) $(LIBGIRACOIN_CLI) \
+	$(LIBGIRACOIN_COMMON) $(LIBGIRACOIN_UTIL) \
+	$(LIBGIRACOIN_CONSENSUS) $(LIBGIRACOIN_CRYPTO) \
+	$(am__DEPENDENCIES_4) $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_2) $(am__DEPENDENCIES_3) \
+	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
+	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
+	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
+	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
+	$(LIBSECP256K1) $(am__DEPENDENCIES_3) \
+	$(am__DEPENDENCIES_3)
 qt_giracoin_qt_LINK = $(LIBTOOL) $(AM_V_lt) \
 	$(qt_giracoin_qt_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link \
 	$(OBJCXXLD) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) \
@@ -914,43 +914,43 @@ am__qt_test_test_giracoin_qt_SOURCES_DIST = qt/test/test_main.cpp \
 	qt/test/uritests.cpp qt/test/uritests.h \
 	qt/test/paymentrequestdata.h qt/test/paymentservertests.h \
 	qt/test/paymentservertests.cpp
-#am__objects_25 = qt/test/qt_test_test_giracoin_qt-paymentservertests.$(OBJEXT)
-#am_qt_test_test_giracoin_qt_OBJECTS = qt/test/qt_test_test_giracoin_qt-test_main.$(OBJEXT) \
-#	qt/test/qt_test_test_giracoin_qt-uritests.$(OBJEXT) \
-#	$(am__objects_3) $(am__objects_25)
-#am__objects_26 = qt/test/qt_test_test_giracoin_qt-moc_paymentservertests.$(OBJEXT)
-#am__objects_27 = qt/test/qt_test_test_giracoin_qt-moc_uritests.$(OBJEXT) \
-#	$(am__objects_26)
-#nodist_qt_test_test_giracoin_qt_OBJECTS =  \
-#	$(am__objects_27)
+am__objects_25 = qt/test/qt_test_test_giracoin_qt-paymentservertests.$(OBJEXT)
+am_qt_test_test_giracoin_qt_OBJECTS = qt/test/qt_test_test_giracoin_qt-test_main.$(OBJEXT) \
+	qt/test/qt_test_test_giracoin_qt-uritests.$(OBJEXT) \
+	$(am__objects_3) $(am__objects_25)
+am__objects_26 = qt/test/qt_test_test_giracoin_qt-moc_paymentservertests.$(OBJEXT)
+am__objects_27 = qt/test/qt_test_test_giracoin_qt-moc_uritests.$(OBJEXT) \
+	$(am__objects_26)
+nodist_qt_test_test_giracoin_qt_OBJECTS =  \
+	$(am__objects_27)
 qt_test_test_giracoin_qt_OBJECTS =  \
 	$(am_qt_test_test_giracoin_qt_OBJECTS) \
 	$(nodist_qt_test_test_giracoin_qt_OBJECTS)
 #am__DEPENDENCIES_7 =  \
 #	$(LIBGIRACOIN_ZMQ) \
 #	$(am__DEPENDENCIES_3)
-#qt_test_test_giracoin_qt_DEPENDENCIES =  \
-#	$(LIBGIRACOINQT) $(LIBGIRACOIN_SERVER) \
-#	$(am__append_41) $(am__DEPENDENCIES_7) \
-#	$(LIBGIRACOIN_CLI) $(LIBGIRACOIN_COMMON) \
-#	$(LIBGIRACOIN_UTIL) \
-#	$(LIBGIRACOIN_CONSENSUS) \
-#	$(LIBGIRACOIN_CRYPTO) \
-#	$(am__DEPENDENCIES_4) \
-#	$(am__DEPENDENCIES_1) \
-#	$(am__DEPENDENCIES_2) \
-#	$(am__DEPENDENCIES_3) \
-#	$(am__DEPENDENCIES_3) \
-#	$(am__DEPENDENCIES_3) \
-#	$(am__DEPENDENCIES_3) \
-#	$(am__DEPENDENCIES_3) \
-#	$(am__DEPENDENCIES_3) \
-#	$(am__DEPENDENCIES_3) \
-#	$(am__DEPENDENCIES_3) \
-#	$(am__DEPENDENCIES_3) \
-#	$(am__DEPENDENCIES_3) $(LIBSECP256K1) \
-#	$(am__DEPENDENCIES_3) \
-#	$(am__DEPENDENCIES_3)
+qt_test_test_giracoin_qt_DEPENDENCIES =  \
+	$(LIBGIRACOINQT) $(LIBGIRACOIN_SERVER) \
+	$(am__append_41) $(am__DEPENDENCIES_7) \
+	$(LIBGIRACOIN_CLI) $(LIBGIRACOIN_COMMON) \
+	$(LIBGIRACOIN_UTIL) \
+	$(LIBGIRACOIN_CONSENSUS) \
+	$(LIBGIRACOIN_CRYPTO) \
+	$(am__DEPENDENCIES_4) \
+	$(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_2) \
+	$(am__DEPENDENCIES_3) \
+	$(am__DEPENDENCIES_3) \
+	$(am__DEPENDENCIES_3) \
+	$(am__DEPENDENCIES_3) \
+	$(am__DEPENDENCIES_3) \
+	$(am__DEPENDENCIES_3) \
+	$(am__DEPENDENCIES_3) \
+	$(am__DEPENDENCIES_3) \
+	$(am__DEPENDENCIES_3) \
+	$(am__DEPENDENCIES_3) $(LIBSECP256K1) \
+	$(am__DEPENDENCIES_3) \
+	$(am__DEPENDENCIES_3)
 qt_test_test_giracoin_qt_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(qt_test_test_giracoin_qt_CXXFLAGS) $(CXXFLAGS) \
@@ -1054,8 +1054,8 @@ nodist_test_test_giracoin_OBJECTS =  \
 	$(am__objects_30)
 test_test_giracoin_OBJECTS = $(am_test_test_giracoin_OBJECTS) \
 	$(nodist_test_test_giracoin_OBJECTS)
-am__DEPENDENCIES_8 =  \
-	$(am__DEPENDENCIES_3)
+#am__DEPENDENCIES_8 =  \
+#	$(am__DEPENDENCIES_3)
 test_test_giracoin_DEPENDENCIES =  \
 	$(LIBGIRACOIN_SERVER) $(LIBGIRACOIN_CLI) \
 	$(LIBGIRACOIN_COMMON) $(LIBGIRACOIN_UTIL) \
@@ -1374,7 +1374,7 @@ am__set_TESTS_bases = \
   bases=`echo $$bases`
 RECHECK_LOGS = $(TEST_LOGS)
 TEST_SUITE_LOG = test-suite.log
-TEST_EXTENSIONS =  .test
+TEST_EXTENSIONS = .exe .test
 LOG_DRIVER = $(SHELL) $(top_srcdir)/build-aux/test-driver
 LOG_COMPILE = $(LOG_COMPILER) $(AM_LOG_FLAGS) $(LOG_FLAGS)
 am__set_b = \
@@ -1388,7 +1388,7 @@ am__set_b = \
       b='$*';; \
   esac
 am__test_logs1 = $(TESTS:=.log)
-am__test_logs2 = $(am__test_logs1:.log=.log)
+am__test_logs2 = $(am__test_logs1:.exe.log=.log)
 TEST_LOGS = $(am__test_logs2:.test.log=.log)
 TEST_LOG_DRIVER = $(SHELL) $(top_srcdir)/build-aux/test-driver
 TEST_LOG_COMPILE = $(TEST_LOG_COMPILER) $(AM_TEST_LOG_FLAGS) \
@@ -1429,27 +1429,27 @@ am__relativize = \
 ACLOCAL = ${SHELL} /root/giracoin/build-aux/missing aclocal-1.15
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
-AR = /usr/bin/ar
+AR = /usr/bin/i686-w64-mingw32-ar
 AUTOCONF = ${SHELL} /root/giracoin/build-aux/missing autoconf
 AUTOHEADER = ${SHELL} /root/giracoin/build-aux/missing autoheader
 AUTOMAKE = ${SHELL} /root/giracoin/build-aux/missing automake-1.15
 AWK = mawk
 BDB_CPPFLAGS = 
 BDB_LIBS = -ldb_cxx-4.8
-BOOST_CHRONO_LIB = -lboost_chrono
-BOOST_CPPFLAGS = -pthread -I/usr/include
-BOOST_FILESYSTEM_LIB = -lboost_filesystem
-BOOST_LDFLAGS = -L/usr/lib/x86_64-linux-gnu
-BOOST_LIBS = -L/usr/lib/x86_64-linux-gnu -lboost_system -lboost_filesystem -lboost_program_options -lboost_thread -lboost_chrono
-BOOST_PROGRAM_OPTIONS_LIB = -lboost_program_options
-BOOST_SYSTEM_LIB = -lboost_system
-BOOST_THREAD_LIB = -lboost_thread
-BOOST_UNIT_TEST_FRAMEWORK_LIB = -lboost_unit_test_framework
+BOOST_CHRONO_LIB = -lboost_chrono-mt-s
+BOOST_CPPFLAGS = -mthreads -I/root/giracoin/depends/i686-w64-mingw32/share/../include
+BOOST_FILESYSTEM_LIB = -lboost_filesystem-mt-s
+BOOST_LDFLAGS = -L/root/giracoin/depends/i686-w64-mingw32/share/../lib
+BOOST_LIBS = -L/root/giracoin/depends/i686-w64-mingw32/share/../lib -lboost_system-mt-s -lboost_filesystem-mt-s -lboost_program_options-mt-s -lboost_thread_win32-mt-s -lboost_chrono-mt-s
+BOOST_PROGRAM_OPTIONS_LIB = -lboost_program_options-mt-s
+BOOST_SYSTEM_LIB = -lboost_system-mt-s
+BOOST_THREAD_LIB = -lboost_thread_win32-mt-s
+BOOST_UNIT_TEST_FRAMEWORK_LIB = -lboost_unit_test_framework-mt-s
 BREW = 
-CC = gcc
-CCACHE = 
+CC = /root/giracoin/depends/i686-w64-mingw32/share/../native/bin/ccache i686-w64-mingw32-gcc
+CCACHE = /root/giracoin/depends/i686-w64-mingw32/share/../native/bin/ccache
 CCDEPMODE = depmode=gcc3
-CFLAGS = -g -O2
+CFLAGS = -pipe -O2 
 CLIENT_VERSION_BUILD = 0
 CLIENT_VERSION_IS_RELEASE = true
 CLIENT_VERSION_MAJOR = 0
@@ -1460,19 +1460,19 @@ COPYRIGHT_HOLDERS = The %s Developers - Gira Financial Group AG (http://www.gira
 COPYRIGHT_HOLDERS_FINAL = The Giracoin Core Developers - Gira Financial Group AG (http://www.gira-financial.com)
 COPYRIGHT_HOLDERS_SUBSTITUTION = Giracoin Core
 COPYRIGHT_YEAR = 2016
-CPP = gcc -E
-CPPFILT = /usr/bin/c++filt
-CPPFLAGS =  -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS
+CPP = i686-w64-mingw32-gcc -E
+CPPFILT = /usr/bin/i686-w64-mingw32-c++filt
+CPPFLAGS = -I/root/giracoin/depends/i686-w64-mingw32/share/../include/  -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -D_MT -DWIN32 -D_WINDOWS -DBOOST_THREAD_USE_LIB -DBOOST_SYSTEM_NO_DEPRECATED -D_FILE_OFFSET_BITS=64
 CRYPTO_CFLAGS = 
 CRYPTO_LIBS = -lcrypto
-CXX = g++
-CXXCPP = g++ -E
+CXX = /root/giracoin/depends/i686-w64-mingw32/share/../native/bin/ccache i686-w64-mingw32-g++
+CXXCPP = i686-w64-mingw32-g++ -E
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter
+CXXFLAGS = -pipe -O2 
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
-DLLTOOL = false
+DLLTOOL = i686-w64-mingw32-dlltool
 DSYMUTIL = 
 DUMPBIN = 
 ECHO_C = 
@@ -1481,12 +1481,12 @@ ECHO_T =
 EGREP = /bin/grep -E
 EVENT_CFLAGS = 
 EVENT_LIBS = -levent
-EVENT_PTHREADS_CFLAGS = -pthread
-EVENT_PTHREADS_LIBS = -levent_pthreads -levent
-EXEEXT = 
+EVENT_PTHREADS_CFLAGS = 
+EVENT_PTHREADS_LIBS = 
+EXEEXT = .exe
 EXTENDED_RPC_TESTS = 
 FGREP = /bin/grep -F
-GCOV = /usr/bin/gcov
+GCOV = /usr/bin/i686-w64-mingw32-gcov
 GENHTML = 
 GENISOIMAGE = 
 GIRACOIN_CLI_NAME = giracoin-cli
@@ -1497,7 +1497,7 @@ GIT = /usr/bin/git
 GREP = /bin/grep
 HARDENED_CPPFLAGS =  -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2
 HARDENED_CXXFLAGS =  -Wstack-protector -fstack-protector-all
-HARDENED_LDFLAGS =  -Wl,-z,relro -Wl,-z,now -pie
+HARDENED_LDFLAGS =  -Wl,--dynamicbase -Wl,--nxcompat
 HAVE_CXX11 = 1
 HEXDUMP = /usr/bin/hexdump
 IMAGEMAGICK_CONVERT = 
@@ -1508,40 +1508,40 @@ INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 JAVA = 
-JAVA_COMPARISON_TOOL = 
+JAVA_COMPARISON_TOOL = /root/giracoin/depends/i686-w64-mingw32/share/../native/share/GiracoindComparisonTool_jar/GiracoindComparisonTool.jar
 LCOV = 
-LD = /usr/bin/ld -m elf_x86_64
-LDFLAGS = 
+LD = /usr/bin/i686-w64-mingw32-ld
+LDFLAGS = -L/root/giracoin/depends/i686-w64-mingw32/share/../lib  -Wl,--large-address-aware
 LEVELDB_CPPFLAGS =  $(am__append_11)
-LEVELDB_TARGET_FLAGS = -DOS_LINUX
+LEVELDB_TARGET_FLAGS = -DOS_WINDOWS
 LIBLEVELDB =  $(am__append_9)
 LIBMEMENV =  $(am__append_10)
 LIBOBJS = 
-LIBS = -lanl 
+LIBS = -lQt5PlatformSupport -lssp -lcrypt32 -liphlpapi -lshlwapi -lmswsock -lws2_32 -ladvapi32 -lrpcrt4 -luuid -loleaut32 -lole32 -lcomctl32 -lshell32 -lwinmm -lwinspool -lcomdlg32 -lgdi32 -luser32 -lkernel32 -lmingwthrd 
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
-LIBTOOL_APP_LDFLAGS = 
+LIBTOOL_APP_LDFLAGS =  -all-static
 LIPO = 
 LN_S = ln -s
-LRELEASE = 
+LRELEASE = /root/giracoin/depends/i686-w64-mingw32/share/../native/bin/lrelease
 LTLIBOBJS = 
 LT_SYS_LIBRARY_PATH = 
 LUPDATE = 
 MAINT = 
 MAKEINFO = ${SHELL} /root/giracoin/build-aux/missing makeinfo
-MAKENSIS = 
+MAKENSIS = none
 MANIFEST_TOOL = :
-MINIUPNPC_CPPFLAGS = 
+MINIUPNPC_CPPFLAGS = -DSTATICLIB -DMINIUPNP_STATICLIB
 MINIUPNPC_LIBS = -lminiupnpc
 MKDIR_P = /bin/mkdir -p
-MOC = 
+MOC = /root/giracoin/depends/i686-w64-mingw32/share/../native/bin/moc
 MOC_DEFS = -DHAVE_CONFIG_H -I$(srcdir)
-NM = /usr/bin/nm -B
+NM = i686-w64-mingw32-nm
 NMEDIT = 
-OBJCOPY = /usr/bin/objcopy
-OBJCXX = g++
+OBJCOPY = /usr/bin/i686-w64-mingw32-objcopy
+OBJCXX = i686-w64-mingw32-g++
 OBJCXXDEPMODE = depmode=gcc3
 OBJCXXFLAGS = 
-OBJDUMP = objdump
+OBJDUMP = i686-w64-mingw32-objdump
 OBJEXT = o
 OTOOL = 
 OTOOL64 = 
@@ -1553,22 +1553,22 @@ PACKAGE_TARNAME = giracoin
 PACKAGE_URL = https://giracoin.com/
 PACKAGE_VERSION = 0.13.1
 PATH_SEPARATOR = :
-PIC_FLAGS = -fPIC
-PIE_FLAGS = -fPIE
-PKG_CONFIG = /usr/bin/pkg-config
-PKG_CONFIG_LIBDIR = 
-PKG_CONFIG_PATH = 
+PIC_FLAGS = 
+PIE_FLAGS = 
+PKG_CONFIG = /usr/bin/pkg-config --static
+PKG_CONFIG_LIBDIR = /root/giracoin/depends/i686-w64-mingw32/share/../lib/pkgconfig
+PKG_CONFIG_PATH = /root/giracoin/depends/i686-w64-mingw32/share/../share/pkgconfig
 PORT = 
 PROTOBUF_CFLAGS = 
-PROTOBUF_LIBS = 
-PROTOC = 
-PTHREAD_CC = gcc
+PROTOBUF_LIBS = -lprotobuf
+PROTOC = /root/giracoin/depends/i686-w64-mingw32/share/../native/bin/protoc
+PTHREAD_CC = i686-w64-mingw32-gcc
 PTHREAD_CFLAGS = -pthread
 PTHREAD_LIBS = 
 PYTHON = /usr/bin/python3.6
-PYTHONPATH = 
+PYTHONPATH = /root/giracoin/depends/i686-w64-mingw32/share/../native/lib/python/dist-packages:
 QR_CFLAGS = 
-QR_LIBS = 
+QR_LIBS = -lqrencode
 QTPLATFORM_CFLAGS = 
 QTPLATFORM_LIBS = 
 QTPRINT_CFLAGS = 
@@ -1578,19 +1578,19 @@ QTXCBQPA_LIBS =
 QT_CFLAGS = 
 QT_DBUS_CFLAGS = 
 QT_DBUS_INCLUDES = 
-QT_DBUS_LIBS = 
-QT_INCLUDES = 
-QT_LDFLAGS = 
-QT_LIBS = 
+QT_DBUS_LIBS = -lQt5DBus -L/root/giracoin/depends/i686-w64-mingw32/share/../lib
+QT_INCLUDES = -I/root/giracoin/depends/i686-w64-mingw32/share/../include -I/root/giracoin/depends/i686-w64-mingw32/share/../include/QtCore -I/root/giracoin/depends/i686-w64-mingw32/share/../include/QtGui -I/root/giracoin/depends/i686-w64-mingw32/share/../include/QtWidgets -I/root/giracoin/depends/i686-w64-mingw32/share/../include/QtNetwork -I/root/giracoin/depends/i686-w64-mingw32/share/../include/QtTest -I/root/giracoin/depends/i686-w64-mingw32/share/../include/QtDBus
+QT_LDFLAGS =  -mwindows
+QT_LIBS = -lqwindows -lQt5Widgets -lQt5Network -lQt5Gui     -lQt5Core    -lqtharfbuzzng -lqtpcre -limm32  -L/root/giracoin/depends/i686-w64-mingw32/share/../lib -L/root/giracoin/depends/i686-w64-mingw32/share/../plugins/platforms
 QT_PIE_FLAGS = 
 QT_SELECT = qt5
 QT_TEST_CFLAGS = 
 QT_TEST_INCLUDES = 
-QT_TEST_LIBS = 
-QT_TRANSLATION_DIR = 
-RANLIB = /usr/bin/ranlib
-RCC = 
-READELF = /usr/bin/readelf
+QT_TEST_LIBS = -lQt5Test -L/root/giracoin/depends/i686-w64-mingw32/share/../lib
+QT_TRANSLATION_DIR = /root/giracoin/depends/i686-w64-mingw32/share/../translations
+RANLIB = /usr/bin/i686-w64-mingw32-ranlib
+RCC = /root/giracoin/depends/i686-w64-mingw32/share/../native/bin/rcc
+READELF = /usr/bin/i686-w64-mingw32-readelf
 RELDFLAGS = 
 RSVG_CONVERT = 
 SED = /bin/sed
@@ -1598,31 +1598,31 @@ SET_MAKE =
 SHELL = /bin/bash
 SSL_CFLAGS = 
 SSL_LIBS = -lssl
-STRIP = /usr/bin/strip
-TESTDEFS =  -DBOOST_TEST_DYN_LINK
+STRIP = /usr/bin/i686-w64-mingw32-strip
+TESTDEFS = 
 TIFFCP = 
-UIC = 
+UIC = /root/giracoin/depends/i686-w64-mingw32/share/../native/bin/uic
 UNIVALUE_CFLAGS = -I$(srcdir)/univalue/include
 UNIVALUE_LIBS = univalue/libunivalue.la
 USE_QRCODE = 
 USE_UPNP = 
 VERSION = 0.13.1
-WINDOWS_BITS = 
-WINDRES = 
+WINDOWS_BITS = 32
+WINDRES = /usr/bin/i686-w64-mingw32-windres
 X11XCB_CFLAGS = 
 X11XCB_LIBS = 
 XGETTEXT = 
 ZMQ_CFLAGS = 
-ZMQ_LIBS = -lzmq
+ZMQ_LIBS = 
 abs_builddir = /root/giracoin/src
 abs_srcdir = /root/giracoin/src
 abs_top_builddir = /root/giracoin
 abs_top_srcdir = /root/giracoin
-ac_ct_AR = ar
-ac_ct_CC = gcc
-ac_ct_CXX = g++
+ac_ct_AR = 
+ac_ct_CC = 
+ac_ct_CXX = 
 ac_ct_DUMPBIN = 
-ac_ct_OBJCXX = g++
+ac_ct_OBJCXX = 
 am__include = include
 am__leading_dot = .
 am__quote = 
@@ -1641,11 +1641,11 @@ datarootdir = ${prefix}/share
 docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
 dvidir = ${docdir}
 exec_prefix = ${prefix}
-host = x86_64-pc-linux-gnu
-host_alias = 
-host_cpu = x86_64
-host_os = linux-gnu
-host_vendor = pc
+host = i686-w64-mingw32
+host_alias = i686-w64-mingw32
+host_cpu = i686
+host_os = mingw32
+host_vendor = w64
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
@@ -1658,7 +1658,7 @@ mandir = ${datarootdir}/man
 mkdir_p = $(MKDIR_P)
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-prefix = /usr/local
+prefix = /root/giracoin/depends/i686-w64-mingw32
 program_transform_name = s,x,x,
 psdir = ${docdir}
 runstatedir = ${localstatedir}/run
@@ -1696,7 +1696,7 @@ LIBGIRACOIN_UTIL = libgiracoin_util.a
 LIBGIRACOIN_CRYPTO = crypto/libgiracoin_crypto.a
 LIBGIRACOINQT = qt/libgiracoinqt.a
 LIBSECP256K1 = secp256k1/libsecp256k1.la
-LIBGIRACOIN_ZMQ = libgiracoin_zmq.a
+#LIBGIRACOIN_ZMQ = libgiracoin_zmq.a
 LIBGIRACOINCONSENSUS = libgiracoinconsensus.la
 LIBGIRACOIN_WALLET = libgiracoin_wallet.a
 lib_LTLIBRARIES = $(LIBGIRACOINCONSENSUS)
@@ -1827,12 +1827,12 @@ libgiracoin_server_a_SOURCES = \
   versionbits.cpp \
   $(GIRACOIN_CORE_H)
 
-libgiracoin_zmq_a_CPPFLAGS = $(GIRACOIN_INCLUDES) $(ZMQ_CFLAGS)
-libgiracoin_zmq_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libgiracoin_zmq_a_SOURCES = \
-  zmq/zmqabstractnotifier.cpp \
-  zmq/zmqnotificationinterface.cpp \
-  zmq/zmqpublishnotifier.cpp
+#libgiracoin_zmq_a_CPPFLAGS = $(GIRACOIN_INCLUDES) $(ZMQ_CFLAGS)
+#libgiracoin_zmq_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+#libgiracoin_zmq_a_SOURCES = \
+#  zmq/zmqabstractnotifier.cpp \
+#  zmq/zmqnotificationinterface.cpp \
+#  zmq/zmqpublishnotifier.cpp
 
 
 # wallet: shared between giracoind and giracoin-qt, but only linked
@@ -2214,416 +2214,416 @@ bench_bench_giracoin_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 CLEAN_GIRACOIN_BENCH = bench/*.gcda bench/*.gcno
 
 # giracoin qt core #
-#QT_TS = \
-#  qt/locale/giracoin_af.ts \
-#  qt/locale/giracoin_af_ZA.ts \
-#  qt/locale/giracoin_ar.ts \
-#  qt/locale/giracoin_be_BY.ts \
-#  qt/locale/giracoin_bg_BG.ts \
-#  qt/locale/giracoin_bg.ts \
-#  qt/locale/giracoin_ca_ES.ts \
-#  qt/locale/giracoin_ca.ts \
-#  qt/locale/giracoin_ca@valencia.ts \
-#  qt/locale/giracoin_cs_CZ.ts \
-#  qt/locale/giracoin_cs.ts \
-#  qt/locale/giracoin_cy.ts \
-#  qt/locale/giracoin_da.ts \
-#  qt/locale/giracoin_de.ts \
-#  qt/locale/giracoin_el_GR.ts \
-#  qt/locale/giracoin_el.ts \
-#  qt/locale/giracoin_en_GB.ts \
-#  qt/locale/giracoin_en.ts \
-#  qt/locale/giracoin_eo.ts \
-#  qt/locale/giracoin_es_AR.ts \
-#  qt/locale/giracoin_es_CL.ts \
-#  qt/locale/giracoin_es_CO.ts \
-#  qt/locale/giracoin_es_DO.ts \
-#  qt/locale/giracoin_es_ES.ts \
-#  qt/locale/giracoin_es_MX.ts \
-#  qt/locale/giracoin_es.ts \
-#  qt/locale/giracoin_es_UY.ts \
-#  qt/locale/giracoin_es_VE.ts \
-#  qt/locale/giracoin_et.ts \
-#  qt/locale/giracoin_eu_ES.ts \
-#  qt/locale/giracoin_fa_IR.ts \
-#  qt/locale/giracoin_fa.ts \
-#  qt/locale/giracoin_fi.ts \
-#  qt/locale/giracoin_fr_CA.ts \
-#  qt/locale/giracoin_fr_FR.ts \
-#  qt/locale/giracoin_fr.ts \
-#  qt/locale/giracoin_gl.ts \
-#  qt/locale/giracoin_he.ts \
-#  qt/locale/giracoin_hi_IN.ts \
-#  qt/locale/giracoin_hr.ts \
-#  qt/locale/giracoin_hu.ts \
-#  qt/locale/giracoin_id_ID.ts \
-#  qt/locale/giracoin_it_IT.ts \
-#  qt/locale/giracoin_it.ts \
-#  qt/locale/giracoin_ja.ts \
-#  qt/locale/giracoin_ka.ts \
-#  qt/locale/giracoin_kk_KZ.ts \
-#  qt/locale/giracoin_ko_KR.ts \
-#  qt/locale/giracoin_ku_IQ.ts \
-#  qt/locale/giracoin_ky.ts \
-#  qt/locale/giracoin_la.ts \
-#  qt/locale/giracoin_lt.ts \
-#  qt/locale/giracoin_lv_LV.ts \
-#  qt/locale/giracoin_mk_MK.ts \
-#  qt/locale/giracoin_mn.ts \
-#  qt/locale/giracoin_ms_MY.ts \
-#  qt/locale/giracoin_nb.ts \
-#  qt/locale/giracoin_ne.ts \
-#  qt/locale/giracoin_nl.ts \
-#  qt/locale/giracoin_pam.ts \
-#  qt/locale/giracoin_pl.ts \
-#  qt/locale/giracoin_pt_BR.ts \
-#  qt/locale/giracoin_pt_PT.ts \
-#  qt/locale/giracoin_ro_RO.ts \
-#  qt/locale/giracoin_ro.ts \
-#  qt/locale/giracoin_ru_RU.ts \
-#  qt/locale/giracoin_ru.ts \
-#  qt/locale/giracoin_sk.ts \
-#  qt/locale/giracoin_sl_SI.ts \
-#  qt/locale/giracoin_sq.ts \
-#  qt/locale/giracoin_sr@latin.ts \
-#  qt/locale/giracoin_sr.ts \
-#  qt/locale/giracoin_sv.ts \
-#  qt/locale/giracoin_ta.ts \
-#  qt/locale/giracoin_th_TH.ts \
-#  qt/locale/giracoin_tr_TR.ts \
-#  qt/locale/giracoin_tr.ts \
-#  qt/locale/giracoin_uk.ts \
-#  qt/locale/giracoin_ur_PK.ts \
-#  qt/locale/giracoin_uz@Cyrl.ts \
-#  qt/locale/giracoin_vi.ts \
-#  qt/locale/giracoin_vi_VN.ts \
-#  qt/locale/giracoin_zh_CN.ts \
-#  qt/locale/giracoin_zh_HK.ts \
-#  qt/locale/giracoin_zh.ts \
-#  qt/locale/giracoin_zh_TW.ts
+QT_TS = \
+  qt/locale/giracoin_af.ts \
+  qt/locale/giracoin_af_ZA.ts \
+  qt/locale/giracoin_ar.ts \
+  qt/locale/giracoin_be_BY.ts \
+  qt/locale/giracoin_bg_BG.ts \
+  qt/locale/giracoin_bg.ts \
+  qt/locale/giracoin_ca_ES.ts \
+  qt/locale/giracoin_ca.ts \
+  qt/locale/giracoin_ca@valencia.ts \
+  qt/locale/giracoin_cs_CZ.ts \
+  qt/locale/giracoin_cs.ts \
+  qt/locale/giracoin_cy.ts \
+  qt/locale/giracoin_da.ts \
+  qt/locale/giracoin_de.ts \
+  qt/locale/giracoin_el_GR.ts \
+  qt/locale/giracoin_el.ts \
+  qt/locale/giracoin_en_GB.ts \
+  qt/locale/giracoin_en.ts \
+  qt/locale/giracoin_eo.ts \
+  qt/locale/giracoin_es_AR.ts \
+  qt/locale/giracoin_es_CL.ts \
+  qt/locale/giracoin_es_CO.ts \
+  qt/locale/giracoin_es_DO.ts \
+  qt/locale/giracoin_es_ES.ts \
+  qt/locale/giracoin_es_MX.ts \
+  qt/locale/giracoin_es.ts \
+  qt/locale/giracoin_es_UY.ts \
+  qt/locale/giracoin_es_VE.ts \
+  qt/locale/giracoin_et.ts \
+  qt/locale/giracoin_eu_ES.ts \
+  qt/locale/giracoin_fa_IR.ts \
+  qt/locale/giracoin_fa.ts \
+  qt/locale/giracoin_fi.ts \
+  qt/locale/giracoin_fr_CA.ts \
+  qt/locale/giracoin_fr_FR.ts \
+  qt/locale/giracoin_fr.ts \
+  qt/locale/giracoin_gl.ts \
+  qt/locale/giracoin_he.ts \
+  qt/locale/giracoin_hi_IN.ts \
+  qt/locale/giracoin_hr.ts \
+  qt/locale/giracoin_hu.ts \
+  qt/locale/giracoin_id_ID.ts \
+  qt/locale/giracoin_it_IT.ts \
+  qt/locale/giracoin_it.ts \
+  qt/locale/giracoin_ja.ts \
+  qt/locale/giracoin_ka.ts \
+  qt/locale/giracoin_kk_KZ.ts \
+  qt/locale/giracoin_ko_KR.ts \
+  qt/locale/giracoin_ku_IQ.ts \
+  qt/locale/giracoin_ky.ts \
+  qt/locale/giracoin_la.ts \
+  qt/locale/giracoin_lt.ts \
+  qt/locale/giracoin_lv_LV.ts \
+  qt/locale/giracoin_mk_MK.ts \
+  qt/locale/giracoin_mn.ts \
+  qt/locale/giracoin_ms_MY.ts \
+  qt/locale/giracoin_nb.ts \
+  qt/locale/giracoin_ne.ts \
+  qt/locale/giracoin_nl.ts \
+  qt/locale/giracoin_pam.ts \
+  qt/locale/giracoin_pl.ts \
+  qt/locale/giracoin_pt_BR.ts \
+  qt/locale/giracoin_pt_PT.ts \
+  qt/locale/giracoin_ro_RO.ts \
+  qt/locale/giracoin_ro.ts \
+  qt/locale/giracoin_ru_RU.ts \
+  qt/locale/giracoin_ru.ts \
+  qt/locale/giracoin_sk.ts \
+  qt/locale/giracoin_sl_SI.ts \
+  qt/locale/giracoin_sq.ts \
+  qt/locale/giracoin_sr@latin.ts \
+  qt/locale/giracoin_sr.ts \
+  qt/locale/giracoin_sv.ts \
+  qt/locale/giracoin_ta.ts \
+  qt/locale/giracoin_th_TH.ts \
+  qt/locale/giracoin_tr_TR.ts \
+  qt/locale/giracoin_tr.ts \
+  qt/locale/giracoin_uk.ts \
+  qt/locale/giracoin_ur_PK.ts \
+  qt/locale/giracoin_uz@Cyrl.ts \
+  qt/locale/giracoin_vi.ts \
+  qt/locale/giracoin_vi_VN.ts \
+  qt/locale/giracoin_zh_CN.ts \
+  qt/locale/giracoin_zh_HK.ts \
+  qt/locale/giracoin_zh.ts \
+  qt/locale/giracoin_zh_TW.ts
 
-#QT_FORMS_UI = \
-#  qt/forms/addressbookpage.ui \
-#  qt/forms/askpassphrasedialog.ui \
-#  qt/forms/coincontroldialog.ui \
-#  qt/forms/editaddressdialog.ui \
-#  qt/forms/helpmessagedialog.ui \
-#  qt/forms/intro.ui \
-#  qt/forms/openuridialog.ui \
-#  qt/forms/optionsdialog.ui \
-#  qt/forms/overviewpage.ui \
-#  qt/forms/receivecoinsdialog.ui \
-#  qt/forms/receiverequestdialog.ui \
-#  qt/forms/debugwindow.ui \
-#  qt/forms/sendcoinsdialog.ui \
-#  qt/forms/sendcoinsentry.ui \
-#  qt/forms/signverifymessagedialog.ui \
-#  qt/forms/transactiondescdialog.ui
+QT_FORMS_UI = \
+  qt/forms/addressbookpage.ui \
+  qt/forms/askpassphrasedialog.ui \
+  qt/forms/coincontroldialog.ui \
+  qt/forms/editaddressdialog.ui \
+  qt/forms/helpmessagedialog.ui \
+  qt/forms/intro.ui \
+  qt/forms/openuridialog.ui \
+  qt/forms/optionsdialog.ui \
+  qt/forms/overviewpage.ui \
+  qt/forms/receivecoinsdialog.ui \
+  qt/forms/receiverequestdialog.ui \
+  qt/forms/debugwindow.ui \
+  qt/forms/sendcoinsdialog.ui \
+  qt/forms/sendcoinsentry.ui \
+  qt/forms/signverifymessagedialog.ui \
+  qt/forms/transactiondescdialog.ui
 
-#QT_MOC_CPP = \
-#  qt/moc_addressbookpage.cpp \
-#  qt/moc_addresstablemodel.cpp \
-#  qt/moc_askpassphrasedialog.cpp \
-#  qt/moc_bantablemodel.cpp \
-#  qt/moc_giracoinaddressvalidator.cpp \
-#  qt/moc_giracoinamountfield.cpp \
-#  qt/moc_giracoingui.cpp \
-#  qt/moc_giracoinunits.cpp \
-#  qt/moc_clientmodel.cpp \
-#  qt/moc_coincontroldialog.cpp \
-#  qt/moc_coincontroltreewidget.cpp \
-#  qt/moc_csvmodelwriter.cpp \
-#  qt/moc_editaddressdialog.cpp \
-#  qt/moc_guiutil.cpp \
-#  qt/moc_intro.cpp \
-#  qt/moc_macdockiconhandler.cpp \
-#  qt/moc_macnotificationhandler.cpp \
-#  qt/moc_notificator.cpp \
-#  qt/moc_openuridialog.cpp \
-#  qt/moc_optionsdialog.cpp \
-#  qt/moc_optionsmodel.cpp \
-#  qt/moc_overviewpage.cpp \
-#  qt/moc_peertablemodel.cpp \
-#  qt/moc_paymentserver.cpp \
-#  qt/moc_qvalidatedlineedit.cpp \
-#  qt/moc_qvaluecombobox.cpp \
-#  qt/moc_receivecoinsdialog.cpp \
-#  qt/moc_receiverequestdialog.cpp \
-#  qt/moc_recentrequeststablemodel.cpp \
-#  qt/moc_rpcconsole.cpp \
-#  qt/moc_sendcoinsdialog.cpp \
-#  qt/moc_sendcoinsentry.cpp \
-#  qt/moc_signverifymessagedialog.cpp \
-#  qt/moc_splashscreen.cpp \
-#  qt/moc_trafficgraphwidget.cpp \
-#  qt/moc_transactiondesc.cpp \
-#  qt/moc_transactiondescdialog.cpp \
-#  qt/moc_transactionfilterproxy.cpp \
-#  qt/moc_transactiontablemodel.cpp \
-#  qt/moc_transactionview.cpp \
-#  qt/moc_utilitydialog.cpp \
-#  qt/moc_walletframe.cpp \
-#  qt/moc_walletmodel.cpp \
-#  qt/moc_walletview.cpp \
-#  qt/moc_logindialog.cpp
+QT_MOC_CPP = \
+  qt/moc_addressbookpage.cpp \
+  qt/moc_addresstablemodel.cpp \
+  qt/moc_askpassphrasedialog.cpp \
+  qt/moc_bantablemodel.cpp \
+  qt/moc_giracoinaddressvalidator.cpp \
+  qt/moc_giracoinamountfield.cpp \
+  qt/moc_giracoingui.cpp \
+  qt/moc_giracoinunits.cpp \
+  qt/moc_clientmodel.cpp \
+  qt/moc_coincontroldialog.cpp \
+  qt/moc_coincontroltreewidget.cpp \
+  qt/moc_csvmodelwriter.cpp \
+  qt/moc_editaddressdialog.cpp \
+  qt/moc_guiutil.cpp \
+  qt/moc_intro.cpp \
+  qt/moc_macdockiconhandler.cpp \
+  qt/moc_macnotificationhandler.cpp \
+  qt/moc_notificator.cpp \
+  qt/moc_openuridialog.cpp \
+  qt/moc_optionsdialog.cpp \
+  qt/moc_optionsmodel.cpp \
+  qt/moc_overviewpage.cpp \
+  qt/moc_peertablemodel.cpp \
+  qt/moc_paymentserver.cpp \
+  qt/moc_qvalidatedlineedit.cpp \
+  qt/moc_qvaluecombobox.cpp \
+  qt/moc_receivecoinsdialog.cpp \
+  qt/moc_receiverequestdialog.cpp \
+  qt/moc_recentrequeststablemodel.cpp \
+  qt/moc_rpcconsole.cpp \
+  qt/moc_sendcoinsdialog.cpp \
+  qt/moc_sendcoinsentry.cpp \
+  qt/moc_signverifymessagedialog.cpp \
+  qt/moc_splashscreen.cpp \
+  qt/moc_trafficgraphwidget.cpp \
+  qt/moc_transactiondesc.cpp \
+  qt/moc_transactiondescdialog.cpp \
+  qt/moc_transactionfilterproxy.cpp \
+  qt/moc_transactiontablemodel.cpp \
+  qt/moc_transactionview.cpp \
+  qt/moc_utilitydialog.cpp \
+  qt/moc_walletframe.cpp \
+  qt/moc_walletmodel.cpp \
+  qt/moc_walletview.cpp \
+  qt/moc_logindialog.cpp
 
-#GIRACOIN_MM = \
-#  qt/macdockiconhandler.mm \
-#  qt/macnotificationhandler.mm
+GIRACOIN_MM = \
+  qt/macdockiconhandler.mm \
+  qt/macnotificationhandler.mm
 
-#QT_MOC = \
-#  qt/giracoin.moc \
-#  qt/giracoinamountfield.moc \
-#  qt/intro.moc \
-#  qt/overviewpage.moc \
-#  qt/rpcconsole.moc
+QT_MOC = \
+  qt/giracoin.moc \
+  qt/giracoinamountfield.moc \
+  qt/intro.moc \
+  qt/overviewpage.moc \
+  qt/rpcconsole.moc
 
-#QT_QRC_CPP = qt/qrc_giracoin.cpp
-#QT_QRC = qt/giracoin.qrc
-#QT_QRC_LOCALE_CPP = qt/qrc_giracoin_locale.cpp
-#QT_QRC_LOCALE = qt/giracoin_locale.qrc
-#PROTOBUF_CC = qt/paymentrequest.pb.cc
-#PROTOBUF_H = qt/paymentrequest.pb.h
-#PROTOBUF_PROTO = qt/paymentrequest.proto
-#GIRACOIN_QT_H = \
-#  qt/addressbookpage.h \
-#  qt/addresstablemodel.h \
-#  qt/askpassphrasedialog.h \
-#  qt/bantablemodel.h \
-#  qt/giracoinaddressvalidator.h \
-#  qt/giracoinamountfield.h \
-#  qt/giracoingui.h \
-#  qt/giracoinunits.h \
-#  qt/clientmodel.h \
-#  qt/coincontroldialog.h \
-#  qt/coincontroltreewidget.h \
-#  qt/csvmodelwriter.h \
-#  qt/editaddressdialog.h \
-#  qt/guiconstants.h \
-#  qt/guiutil.h \
-#  qt/intro.h \
-#  qt/macdockiconhandler.h \
-#  qt/macnotificationhandler.h \
-#  qt/networkstyle.h \
-#  qt/notificator.h \
-#  qt/openuridialog.h \
-#  qt/optionsdialog.h \
-#  qt/optionsmodel.h \
-#  qt/overviewpage.h \
-#  qt/paymentrequestplus.h \
-#  qt/paymentserver.h \
-#  qt/peertablemodel.h \
-#  qt/platformstyle.h \
-#  qt/qvalidatedlineedit.h \
-#  qt/qvaluecombobox.h \
-#  qt/receivecoinsdialog.h \
-#  qt/receiverequestdialog.h \
-#  qt/recentrequeststablemodel.h \
-#  qt/rpcconsole.h \
-#  qt/sendcoinsdialog.h \
-#  qt/sendcoinsentry.h \
-#  qt/signverifymessagedialog.h \
-#  qt/splashscreen.h \
-#  qt/trafficgraphwidget.h \
-#  qt/transactiondesc.h \
-#  qt/transactiondescdialog.h \
-#  qt/transactionfilterproxy.h \
-#  qt/transactionrecord.h \
-#  qt/transactiontablemodel.h \
-#  qt/transactionview.h \
-#  qt/utilitydialog.h \
-#  qt/walletframe.h \
-#  qt/walletmodel.h \
-#  qt/walletmodeltransaction.h \
-#  qt/walletview.h \
-#  qt/winshutdownmonitor.h \
-#  qt/logindialog.h
+QT_QRC_CPP = qt/qrc_giracoin.cpp
+QT_QRC = qt/giracoin.qrc
+QT_QRC_LOCALE_CPP = qt/qrc_giracoin_locale.cpp
+QT_QRC_LOCALE = qt/giracoin_locale.qrc
+PROTOBUF_CC = qt/paymentrequest.pb.cc
+PROTOBUF_H = qt/paymentrequest.pb.h
+PROTOBUF_PROTO = qt/paymentrequest.proto
+GIRACOIN_QT_H = \
+  qt/addressbookpage.h \
+  qt/addresstablemodel.h \
+  qt/askpassphrasedialog.h \
+  qt/bantablemodel.h \
+  qt/giracoinaddressvalidator.h \
+  qt/giracoinamountfield.h \
+  qt/giracoingui.h \
+  qt/giracoinunits.h \
+  qt/clientmodel.h \
+  qt/coincontroldialog.h \
+  qt/coincontroltreewidget.h \
+  qt/csvmodelwriter.h \
+  qt/editaddressdialog.h \
+  qt/guiconstants.h \
+  qt/guiutil.h \
+  qt/intro.h \
+  qt/macdockiconhandler.h \
+  qt/macnotificationhandler.h \
+  qt/networkstyle.h \
+  qt/notificator.h \
+  qt/openuridialog.h \
+  qt/optionsdialog.h \
+  qt/optionsmodel.h \
+  qt/overviewpage.h \
+  qt/paymentrequestplus.h \
+  qt/paymentserver.h \
+  qt/peertablemodel.h \
+  qt/platformstyle.h \
+  qt/qvalidatedlineedit.h \
+  qt/qvaluecombobox.h \
+  qt/receivecoinsdialog.h \
+  qt/receiverequestdialog.h \
+  qt/recentrequeststablemodel.h \
+  qt/rpcconsole.h \
+  qt/sendcoinsdialog.h \
+  qt/sendcoinsentry.h \
+  qt/signverifymessagedialog.h \
+  qt/splashscreen.h \
+  qt/trafficgraphwidget.h \
+  qt/transactiondesc.h \
+  qt/transactiondescdialog.h \
+  qt/transactionfilterproxy.h \
+  qt/transactionrecord.h \
+  qt/transactiontablemodel.h \
+  qt/transactionview.h \
+  qt/utilitydialog.h \
+  qt/walletframe.h \
+  qt/walletmodel.h \
+  qt/walletmodeltransaction.h \
+  qt/walletview.h \
+  qt/winshutdownmonitor.h \
+  qt/logindialog.h
 
-#RES_ICONS = \
-#  qt/res/icons/add.png \
-#  qt/res/icons/address-book.png \
-#  qt/res/icons/about.png \
-#  qt/res/icons/about_qt.png \
-#  qt/res/icons/giracoin.ico \
-#  qt/res/icons/giracoin_testnet.ico \
-#  qt/res/icons/giracoin.png \
-#  qt/res/icons/chevron.png \
-#  qt/res/icons/clock1.png \
-#  qt/res/icons/clock2.png \
-#  qt/res/icons/clock3.png \
-#  qt/res/icons/clock4.png \
-#  qt/res/icons/clock5.png \
-#  qt/res/icons/configure.png \
-#  qt/res/icons/connect0.png \
-#  qt/res/icons/connect1.png \
-#  qt/res/icons/connect2.png \
-#  qt/res/icons/connect3.png \
-#  qt/res/icons/connect4.png \
-#  qt/res/icons/debugwindow.png \
-#  qt/res/icons/edit.png \
-#  qt/res/icons/editcopy.png \
-#  qt/res/icons/editpaste.png \
-#  qt/res/icons/export.png \
-#  qt/res/icons/eye.png \
-#  qt/res/icons/eye_minus.png \
-#  qt/res/icons/eye_plus.png \
-#  qt/res/icons/filesave.png \
-#  qt/res/icons/fontbigger.png \
-#  qt/res/icons/fontsmaller.png \
-#  qt/res/icons/history.png \
-#  qt/res/icons/info.png \
-#  qt/res/icons/key.png \
-#  qt/res/icons/lock_closed.png \
-#  qt/res/icons/lock_open.png \
-#  qt/res/icons/open.png \
-#  qt/res/icons/overview.png \
-#  qt/res/icons/quit.png \
-#  qt/res/icons/receive.png \
-#  qt/res/icons/remove.png \
-#  qt/res/icons/send.png \
-#  qt/res/icons/synced.png \
-#  qt/res/icons/transaction0.png \
-#  qt/res/icons/transaction2.png \
-#  qt/res/icons/transaction_conflicted.png \
-#  qt/res/icons/tx_inout.png \
-#  qt/res/icons/tx_input.png \
-#  qt/res/icons/tx_output.png \
-#  qt/res/icons/tx_mined.png \
-#  qt/res/icons/warning.png \
-#  qt/res/icons/verify.png \
-#  qt/res/icons/transaction_abandoned.png
+RES_ICONS = \
+  qt/res/icons/add.png \
+  qt/res/icons/address-book.png \
+  qt/res/icons/about.png \
+  qt/res/icons/about_qt.png \
+  qt/res/icons/giracoin.ico \
+  qt/res/icons/giracoin_testnet.ico \
+  qt/res/icons/giracoin.png \
+  qt/res/icons/chevron.png \
+  qt/res/icons/clock1.png \
+  qt/res/icons/clock2.png \
+  qt/res/icons/clock3.png \
+  qt/res/icons/clock4.png \
+  qt/res/icons/clock5.png \
+  qt/res/icons/configure.png \
+  qt/res/icons/connect0.png \
+  qt/res/icons/connect1.png \
+  qt/res/icons/connect2.png \
+  qt/res/icons/connect3.png \
+  qt/res/icons/connect4.png \
+  qt/res/icons/debugwindow.png \
+  qt/res/icons/edit.png \
+  qt/res/icons/editcopy.png \
+  qt/res/icons/editpaste.png \
+  qt/res/icons/export.png \
+  qt/res/icons/eye.png \
+  qt/res/icons/eye_minus.png \
+  qt/res/icons/eye_plus.png \
+  qt/res/icons/filesave.png \
+  qt/res/icons/fontbigger.png \
+  qt/res/icons/fontsmaller.png \
+  qt/res/icons/history.png \
+  qt/res/icons/info.png \
+  qt/res/icons/key.png \
+  qt/res/icons/lock_closed.png \
+  qt/res/icons/lock_open.png \
+  qt/res/icons/open.png \
+  qt/res/icons/overview.png \
+  qt/res/icons/quit.png \
+  qt/res/icons/receive.png \
+  qt/res/icons/remove.png \
+  qt/res/icons/send.png \
+  qt/res/icons/synced.png \
+  qt/res/icons/transaction0.png \
+  qt/res/icons/transaction2.png \
+  qt/res/icons/transaction_conflicted.png \
+  qt/res/icons/tx_inout.png \
+  qt/res/icons/tx_input.png \
+  qt/res/icons/tx_output.png \
+  qt/res/icons/tx_mined.png \
+  qt/res/icons/warning.png \
+  qt/res/icons/verify.png \
+  qt/res/icons/transaction_abandoned.png
 
-#GIRACOIN_QT_BASE_CPP = \
-#  qt/bantablemodel.cpp \
-#  qt/giracoinaddressvalidator.cpp \
-#  qt/giracoinamountfield.cpp \
-#  qt/giracoingui.cpp \
-#  qt/giracoinunits.cpp \
-#  qt/clientmodel.cpp \
-#  qt/csvmodelwriter.cpp \
-#  qt/guiutil.cpp \
-#  qt/intro.cpp \
-#  qt/networkstyle.cpp \
-#  qt/notificator.cpp \
-#  qt/optionsdialog.cpp \
-#  qt/optionsmodel.cpp \
-#  qt/peertablemodel.cpp \
-#  qt/platformstyle.cpp \
-#  qt/qvalidatedlineedit.cpp \
-#  qt/qvaluecombobox.cpp \
-#  qt/rpcconsole.cpp \
-#  qt/splashscreen.cpp \
-#  qt/trafficgraphwidget.cpp \
-#  qt/utilitydialog.cpp \
-#  qt/logindialog.cpp
+GIRACOIN_QT_BASE_CPP = \
+  qt/bantablemodel.cpp \
+  qt/giracoinaddressvalidator.cpp \
+  qt/giracoinamountfield.cpp \
+  qt/giracoingui.cpp \
+  qt/giracoinunits.cpp \
+  qt/clientmodel.cpp \
+  qt/csvmodelwriter.cpp \
+  qt/guiutil.cpp \
+  qt/intro.cpp \
+  qt/networkstyle.cpp \
+  qt/notificator.cpp \
+  qt/optionsdialog.cpp \
+  qt/optionsmodel.cpp \
+  qt/peertablemodel.cpp \
+  qt/platformstyle.cpp \
+  qt/qvalidatedlineedit.cpp \
+  qt/qvaluecombobox.cpp \
+  qt/rpcconsole.cpp \
+  qt/splashscreen.cpp \
+  qt/trafficgraphwidget.cpp \
+  qt/utilitydialog.cpp \
+  qt/logindialog.cpp
 
-#GIRACOIN_QT_WINDOWS_CPP = qt/winshutdownmonitor.cpp
-#GIRACOIN_QT_WALLET_CPP = \
-#  qt/addressbookpage.cpp \
-#  qt/addresstablemodel.cpp \
-#  qt/askpassphrasedialog.cpp \
-#  qt/coincontroldialog.cpp \
-#  qt/coincontroltreewidget.cpp \
-#  qt/editaddressdialog.cpp \
-#  qt/openuridialog.cpp \
-#  qt/overviewpage.cpp \
-#  qt/paymentrequestplus.cpp \
-#  qt/paymentserver.cpp \
-#  qt/receivecoinsdialog.cpp \
-#  qt/receiverequestdialog.cpp \
-#  qt/recentrequeststablemodel.cpp \
-#  qt/sendcoinsdialog.cpp \
-#  qt/sendcoinsentry.cpp \
-#  qt/signverifymessagedialog.cpp \
-#  qt/transactiondesc.cpp \
-#  qt/transactiondescdialog.cpp \
-#  qt/transactionfilterproxy.cpp \
-#  qt/transactionrecord.cpp \
-#  qt/transactiontablemodel.cpp \
-#  qt/transactionview.cpp \
-#  qt/walletframe.cpp \
-#  qt/walletmodel.cpp \
-#  qt/walletmodeltransaction.cpp \
-#  qt/walletview.cpp \
-#  qt/logindialog.cpp
+GIRACOIN_QT_WINDOWS_CPP = qt/winshutdownmonitor.cpp
+GIRACOIN_QT_WALLET_CPP = \
+  qt/addressbookpage.cpp \
+  qt/addresstablemodel.cpp \
+  qt/askpassphrasedialog.cpp \
+  qt/coincontroldialog.cpp \
+  qt/coincontroltreewidget.cpp \
+  qt/editaddressdialog.cpp \
+  qt/openuridialog.cpp \
+  qt/overviewpage.cpp \
+  qt/paymentrequestplus.cpp \
+  qt/paymentserver.cpp \
+  qt/receivecoinsdialog.cpp \
+  qt/receiverequestdialog.cpp \
+  qt/recentrequeststablemodel.cpp \
+  qt/sendcoinsdialog.cpp \
+  qt/sendcoinsentry.cpp \
+  qt/signverifymessagedialog.cpp \
+  qt/transactiondesc.cpp \
+  qt/transactiondescdialog.cpp \
+  qt/transactionfilterproxy.cpp \
+  qt/transactionrecord.cpp \
+  qt/transactiontablemodel.cpp \
+  qt/transactionview.cpp \
+  qt/walletframe.cpp \
+  qt/walletmodel.cpp \
+  qt/walletmodeltransaction.cpp \
+  qt/walletview.cpp \
+  qt/logindialog.cpp
 
-#GIRACOIN_QT_CPP = $(GIRACOIN_QT_BASE_CPP) \
-#	$(am__append_30) $(am__append_31)
-#RES_IMAGES = 
-#RES_MOVIES = $(wildcard qt/res/movies/spinner-*.png)
-#GIRACOIN_RC = qt/res/giracoin-qt-res.rc
-#GIRACOIN_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
-#  -I$(builddir)/qt/forms -DQT_NO_KEYWORDS
+GIRACOIN_QT_CPP = $(GIRACOIN_QT_BASE_CPP) \
+	$(am__append_30) $(am__append_31)
+RES_IMAGES = 
+RES_MOVIES = $(wildcard qt/res/movies/spinner-*.png)
+GIRACOIN_RC = qt/res/giracoin-qt-res.rc
+GIRACOIN_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
+  -I$(builddir)/qt/forms -DQT_NO_KEYWORDS
 
-#qt_libgiracoinqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(GIRACOIN_INCLUDES) $(GIRACOIN_QT_INCLUDES) \
-#  $(QT_INCLUDES) $(QT_DBUS_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
+qt_libgiracoinqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(GIRACOIN_INCLUDES) $(GIRACOIN_QT_INCLUDES) \
+  $(QT_INCLUDES) $(QT_DBUS_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
 
-#qt_libgiracoinqt_a_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
-#qt_libgiracoinqt_a_SOURCES = $(GIRACOIN_QT_CPP) $(GIRACOIN_QT_H) $(QT_FORMS_UI) \
-#  $(QT_QRC) $(QT_QRC_LOCALE) $(QT_TS) $(PROTOBUF_PROTO) $(RES_ICONS) $(RES_IMAGES) $(RES_MOVIES)
+qt_libgiracoinqt_a_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_libgiracoinqt_a_SOURCES = $(GIRACOIN_QT_CPP) $(GIRACOIN_QT_H) $(QT_FORMS_UI) \
+  $(QT_QRC) $(QT_QRC_LOCALE) $(QT_TS) $(PROTOBUF_PROTO) $(RES_ICONS) $(RES_IMAGES) $(RES_MOVIES)
 
-#nodist_qt_libgiracoinqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
-#  $(PROTOBUF_H) $(QT_QRC_CPP) $(QT_QRC_LOCALE_CPP)
+nodist_qt_libgiracoinqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
+  $(PROTOBUF_H) $(QT_QRC_CPP) $(QT_QRC_LOCALE_CPP)
 
 
 # forms/foo.h -> forms/ui_foo.h
-#QT_FORMS_H = $(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:.ui=.h))))
+QT_FORMS_H = $(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:.ui=.h))))
 
 # giracoin-qt binary #
-#qt_giracoin_qt_CPPFLAGS = $(AM_CPPFLAGS) $(GIRACOIN_INCLUDES) $(GIRACOIN_QT_INCLUDES) \
-#  $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
+qt_giracoin_qt_CPPFLAGS = $(AM_CPPFLAGS) $(GIRACOIN_INCLUDES) $(GIRACOIN_QT_INCLUDES) \
+  $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
 
-#qt_giracoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
-#qt_giracoin_qt_SOURCES = qt/giracoin.cpp \
-#	$(am__append_32) $(am__append_33)
-#qt_giracoin_qt_LDADD = qt/libgiracoinqt.a \
-#	$(LIBGIRACOIN_SERVER) $(am__append_34) \
-#	$(am__append_35) $(LIBGIRACOIN_CLI) \
-#	$(LIBGIRACOIN_COMMON) $(LIBGIRACOIN_UTIL) \
-#	$(LIBGIRACOIN_CONSENSUS) $(LIBGIRACOIN_CRYPTO) \
-#	$(LIBUNIVALUE) $(LIBLEVELDB) $(LIBMEMENV) \
-#	$(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) \
-#	$(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS) \
-#	$(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) \
-#	$(LIBSECP256K1) $(EVENT_PTHREADS_LIBS) \
-#	$(EVENT_LIBS)
-#qt_giracoin_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#qt_giracoin_qt_LIBTOOLFLAGS = --tag CXX
+qt_giracoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_giracoin_qt_SOURCES = qt/giracoin.cpp \
+	$(am__append_32) $(am__append_33)
+qt_giracoin_qt_LDADD = qt/libgiracoinqt.a \
+	$(LIBGIRACOIN_SERVER) $(am__append_34) \
+	$(am__append_35) $(LIBGIRACOIN_CLI) \
+	$(LIBGIRACOIN_COMMON) $(LIBGIRACOIN_UTIL) \
+	$(LIBGIRACOIN_CONSENSUS) $(LIBGIRACOIN_CRYPTO) \
+	$(LIBUNIVALUE) $(LIBLEVELDB) $(LIBMEMENV) \
+	$(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) \
+	$(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS) \
+	$(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) \
+	$(LIBSECP256K1) $(EVENT_PTHREADS_LIBS) \
+	$(EVENT_LIBS)
+qt_giracoin_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_giracoin_qt_LIBTOOLFLAGS = --tag CXX
 
 #locale/foo.ts -> locale/foo.qm
-#QT_QM = $(QT_TS:.ts=.qm)
-#CLEAN_QT = $(nodist_qt_libgiracoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno
-#TEST_QT_MOC_CPP = qt/test/moc_uritests.cpp \
-#	$(am__append_39)
-#TEST_QT_H = \
-#  qt/test/uritests.h \
-#  qt/test/paymentrequestdata.h \
-#  qt/test/paymentservertests.h
+QT_QM = $(QT_TS:.ts=.qm)
+CLEAN_QT = $(nodist_qt_libgiracoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno
+TEST_QT_MOC_CPP = qt/test/moc_uritests.cpp \
+	$(am__append_39)
+TEST_QT_H = \
+  qt/test/uritests.h \
+  qt/test/paymentrequestdata.h \
+  qt/test/paymentservertests.h
 
-#qt_test_test_giracoin_qt_CPPFLAGS = $(AM_CPPFLAGS) $(GIRACOIN_INCLUDES) $(GIRACOIN_QT_INCLUDES) \
-#  $(QT_INCLUDES) $(QT_TEST_INCLUDES) $(PROTOBUF_CFLAGS)
+qt_test_test_giracoin_qt_CPPFLAGS = $(AM_CPPFLAGS) $(GIRACOIN_INCLUDES) $(GIRACOIN_QT_INCLUDES) \
+  $(QT_INCLUDES) $(QT_TEST_INCLUDES) $(PROTOBUF_CFLAGS)
 
-#qt_test_test_giracoin_qt_SOURCES =  \
-#	qt/test/test_main.cpp \
-#	qt/test/uritests.cpp $(TEST_QT_H) \
-#	$(am__append_40)
-#nodist_qt_test_test_giracoin_qt_SOURCES = $(TEST_QT_MOC_CPP)
-#qt_test_test_giracoin_qt_LDADD =  \
-#	$(LIBGIRACOINQT) $(LIBGIRACOIN_SERVER) \
-#	$(am__append_41) $(am__append_42) \
-#	$(LIBGIRACOIN_CLI) $(LIBGIRACOIN_COMMON) \
-#	$(LIBGIRACOIN_UTIL) \
-#	$(LIBGIRACOIN_CONSENSUS) \
-#	$(LIBGIRACOIN_CRYPTO) $(LIBUNIVALUE) \
-#	$(LIBLEVELDB) $(LIBMEMENV) $(BOOST_LIBS) \
-#	$(QT_DBUS_LIBS) $(QT_TEST_LIBS) \
-#	$(QT_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) \
-#	$(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) \
-#	$(MINIUPNPC_LIBS) $(LIBSECP256K1) \
-#	$(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
-#qt_test_test_giracoin_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#qt_test_test_giracoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
-#CLEAN_GIRACOIN_QT_TEST = $(TEST_QT_MOC_CPP) qt/test/*.gcda qt/test/*.gcno
+qt_test_test_giracoin_qt_SOURCES =  \
+	qt/test/test_main.cpp \
+	qt/test/uritests.cpp $(TEST_QT_H) \
+	$(am__append_40)
+nodist_qt_test_test_giracoin_qt_SOURCES = $(TEST_QT_MOC_CPP)
+qt_test_test_giracoin_qt_LDADD =  \
+	$(LIBGIRACOINQT) $(LIBGIRACOIN_SERVER) \
+	$(am__append_41) $(am__append_42) \
+	$(LIBGIRACOIN_CLI) $(LIBGIRACOIN_COMMON) \
+	$(LIBGIRACOIN_UTIL) \
+	$(LIBGIRACOIN_CONSENSUS) \
+	$(LIBGIRACOIN_CRYPTO) $(LIBUNIVALUE) \
+	$(LIBLEVELDB) $(LIBMEMENV) $(BOOST_LIBS) \
+	$(QT_DBUS_LIBS) $(QT_TEST_LIBS) \
+	$(QT_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) \
+	$(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) \
+	$(MINIUPNPC_LIBS) $(LIBSECP256K1) \
+	$(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
+qt_test_test_giracoin_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_test_test_giracoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+CLEAN_GIRACOIN_QT_TEST = $(TEST_QT_MOC_CPP) qt/test/*.gcda qt/test/*.gcno
 all: all-recursive
 
 .SUFFIXES:
@@ -8693,13 +8693,13 @@ qt/test/test_giracoin-qt.log: qt/test/test_giracoin-qt$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_TEST_LOG_DRIVER_FLAGS) $(TEST_LOG_DRIVER_FLAGS) -- $(TEST_LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
-#.test$(EXEEXT).log:
-#	@p='$<'; \
-#	$(am__set_b); \
-#	$(am__check_pre) $(TEST_LOG_DRIVER) --test-name "$$f" \
-#	--log-file $$b.log --trs-file $$b.trs \
-#	$(am__common_driver_flags) $(AM_TEST_LOG_DRIVER_FLAGS) $(TEST_LOG_DRIVER_FLAGS) -- $(TEST_LOG_COMPILE) \
-#	"$$tst" $(AM_TESTS_FD_REDIRECT)
+.test$(EXEEXT).log:
+	@p='$<'; \
+	$(am__set_b); \
+	$(am__check_pre) $(TEST_LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_TEST_LOG_DRIVER_FLAGS) $(TEST_LOG_DRIVER_FLAGS) -- $(TEST_LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 
 distdir: $(DISTFILES)
 	@srcdirstrip=`echo "$(srcdir)" | sed 's/[].[^$$\\*]/\\\\&/g'`; \
@@ -9024,66 +9024,66 @@ giracoin_bench_clean : FORCE
 
 # Most files will depend on the forms and moc files as includes. Generate them
 # before anything else.
-#$(QT_MOC): $(QT_FORMS_H)
-#$(qt_libgiracoinqt_a_OBJECTS) $(qt_giracoin_qt_OBJECTS) : | $(QT_MOC)
+$(QT_MOC): $(QT_FORMS_H)
+$(qt_libgiracoinqt_a_OBJECTS) $(qt_giracoin_qt_OBJECTS) : | $(QT_MOC)
 
 #Generating these with a half-written protobuf header leads to wacky results.
 #This makes sure it's done.
-#$(QT_MOC): $(PROTOBUF_H)
-#$(QT_MOC_CPP): $(PROTOBUF_H)
+$(QT_MOC): $(PROTOBUF_H)
+$(QT_MOC_CPP): $(PROTOBUF_H)
 
-#SECONDARY: $(QT_QM)
+SECONDARY: $(QT_QM)
 
-#$(srcdir)/qt/giracoinstrings.cpp: $(libgiracoin_server_a_SOURCES) $(libgiracoin_wallet_a_SOURCES)
-#	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
-#	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) PACKAGE_NAME="$(PACKAGE_NAME)" COPYRIGHT_HOLDERS="$(COPYRIGHT_HOLDERS)" COPYRIGHT_HOLDERS_SUBSTITUTION="$(COPYRIGHT_HOLDERS_SUBSTITUTION)" $(PYTHON) ../share/qt/extract_strings_qt.py $^
+$(srcdir)/qt/giracoinstrings.cpp: $(libgiracoin_server_a_SOURCES) $(libgiracoin_wallet_a_SOURCES)
+	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
+	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) PACKAGE_NAME="$(PACKAGE_NAME)" COPYRIGHT_HOLDERS="$(COPYRIGHT_HOLDERS)" COPYRIGHT_HOLDERS_SUBSTITUTION="$(COPYRIGHT_HOLDERS_SUBSTITUTION)" $(PYTHON) ../share/qt/extract_strings_qt.py $^
 
-#translate: $(srcdir)/qt/giracoinstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(GIRACOIN_QT_BASE_CPP) $(GIRACOIN_QT_WINDOWS_CPP) $(GIRACOIN_QT_WALLET_CPP) $(GIRACOIN_QT_H) $(GIRACOIN_MM)
-#	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
-#	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/giracoin_en.ts
+translate: $(srcdir)/qt/giracoinstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(GIRACOIN_QT_BASE_CPP) $(GIRACOIN_QT_WINDOWS_CPP) $(GIRACOIN_QT_WALLET_CPP) $(GIRACOIN_QT_H) $(GIRACOIN_MM)
+	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/giracoin_en.ts
 
-#$(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
-#	@test -f $(RCC)
-#	@cp -f $< $(@D)/temp_$(<F)
-#	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name giracoin_locale $(@D)/temp_$(<F) | \
-#	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
-#	@rm $(@D)/temp_$(<F)
+$(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
+	@test -f $(RCC)
+	@cp -f $< $(@D)/temp_$(<F)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name giracoin_locale $(@D)/temp_$(<F) | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+	@rm $(@D)/temp_$(<F)
 
-#$(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_MOVIES) $(PROTOBUF_H)
-#	@test -f $(RCC)
-#	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name giracoin $< | \
-#	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+$(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_MOVIES) $(PROTOBUF_H)
+	@test -f $(RCC)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name giracoin $< | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
-#giracoin_qt_clean: FORCE
-#	rm -f $(CLEAN_QT) $(qt_libgiracoinqt_a_OBJECTS) $(qt_giracoin_qt_OBJECTS) qt/giracoin-qt$(EXEEXT) $(LIBGIRACOINQT)
+giracoin_qt_clean: FORCE
+	rm -f $(CLEAN_QT) $(qt_libgiracoinqt_a_OBJECTS) $(qt_giracoin_qt_OBJECTS) qt/giracoin-qt$(EXEEXT) $(LIBGIRACOINQT)
 
-#giracoin_qt : qt/giracoin-qt$(EXEEXT)
+giracoin_qt : qt/giracoin-qt$(EXEEXT)
 
-#ui_%.h: %.ui
-#	@test -f $(UIC)
-#	@$(MKDIR_P) $(@D)
-#	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(UIC) -o $@ $< || (echo "Error creating $@"; false)
+ui_%.h: %.ui
+	@test -f $(UIC)
+	@$(MKDIR_P) $(@D)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(UIC) -o $@ $< || (echo "Error creating $@"; false)
 
-#%.moc: %.cpp
-#	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(MOC) $(DEFAULT_INCLUDES) $(QT_INCLUDES) $(MOC_DEFS) $< | \
-#	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+%.moc: %.cpp
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(MOC) $(DEFAULT_INCLUDES) $(QT_INCLUDES) $(MOC_DEFS) $< | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
-#moc_%.cpp: %.h
-#	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(MOC) $(DEFAULT_INCLUDES) $(QT_INCLUDES) $(MOC_DEFS) $< | \
-#	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+moc_%.cpp: %.h
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(MOC) $(DEFAULT_INCLUDES) $(QT_INCLUDES) $(MOC_DEFS) $< | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
-#%.qm: %.ts
-#	@test -f $(LRELEASE)
-#	@$(MKDIR_P) $(@D)
-#	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LRELEASE) -silent $< -qm $@
+%.qm: %.ts
+	@test -f $(LRELEASE)
+	@$(MKDIR_P) $(@D)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LRELEASE) -silent $< -qm $@
 
-#test_giracoin_qt : qt/test/test_giracoin-qt$(EXEEXT)
+test_giracoin_qt : qt/test/test_giracoin-qt$(EXEEXT)
 
-#test_giracoin_qt_check : qt/test/test_giracoin-qt$(EXEEXT) FORCE
-#	$(MAKE) check-TESTS TESTS=$^
+test_giracoin_qt_check : qt/test/test_giracoin-qt$(EXEEXT) FORCE
+	$(MAKE) check-TESTS TESTS=$^
 
-#test_giracoin_qt_clean: FORCE
-#	rm -f $(CLEAN_GIRACOIN_QT_TEST) $(qt_test_test_giracoin_qt_OBJECTS)
+test_giracoin_qt_clean: FORCE
+	rm -f $(CLEAN_GIRACOIN_QT_TEST) $(qt_test_test_giracoin_qt_OBJECTS)
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

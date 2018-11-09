@@ -5,10 +5,10 @@
 
 SRCDIR="/root/giracoin"
 BUILDDIR="/root/giracoin"
-EXEEXT=""
+EXEEXT=".exe"
 
 # These will turn into comments if they were disabled when configuring.
 ENABLE_WALLET=1
 ENABLE_UTILS=1
 ENABLE_GIRACOIND=1
-ENABLE_ZMQ=1
+#ENABLE_ZMQ=1

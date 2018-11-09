@@ -1,4 +1,4 @@
-Name "Giracoin Core (-bit)"
+Name "Giracoin Core (32-bit)"
 
 RequestExecutionLevel highest
 SetCompressor /SOLID lzma
@@ -20,7 +20,7 @@ SetCompressor /SOLID lzma
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME StartMenuGroup
 !define MUI_STARTMENUPAGE_DEFAULTFOLDER "Giracoin Core"
-!define MUI_FINISHPAGE_RUN $INSTDIR\giracoin-qt
+!define MUI_FINISHPAGE_RUN $INSTDIR\giracoin-qt.exe
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
 !define MUI_UNWELCOMEFINISHPAGE_BITMAP "/root/giracoin/share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
@@ -28,7 +28,7 @@ SetCompressor /SOLID lzma
 # Included files
 !include Sections.nsh
 !include MUI2.nsh
-!if "" == "64"
+!if "32" == "64"
 !include x64.nsh
 !endif
 
@@ -48,8 +48,8 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile /root/giracoin/giracoin-${VERSION}-win-setup.exe
-!if "" == "64"
+OutFile /root/giracoin/giracoin-${VERSION}-win32-setup.exe
+!if "32" == "64"
 InstallDir $PROGRAMFILES64\Giracoin
 !else
 InstallDir $PROGRAMFILES\Giracoin
@@ -73,12 +73,12 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File /root/giracoin/release/giracoin-qt
+    File /root/giracoin/release/giracoin-qt.exe
     File /oname=COPYING.txt /root/giracoin/COPYING
     File /oname=readme.txt /root/giracoin/doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File /root/giracoin/release/giracoind
-    File /root/giracoin/release/giracoin-cli
+    File /root/giracoin/release/giracoind.exe
+    File /root/giracoin/release/giracoin-cli.exe
     SetOutPath $INSTDIR\doc
     File /r /root/giracoin/doc\*.*
     SetOutPath $INSTDIR
@@ -91,8 +91,8 @@ Section -post SEC0001
     WriteUninstaller $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     CreateDirectory $SMPROGRAMS\$StartMenuGroup
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\giracoin-qt
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Giracoin Core (testnet, -bit).lnk" "$INSTDIR\giracoin-qt" "-testnet" "$INSTDIR\giracoin-qt" 1
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\giracoin-qt.exe
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Giracoin Core (testnet, 32-bit).lnk" "$INSTDIR\giracoin-qt.exe" "-testnet" "$INSTDIR\giracoin-qt.exe" 1
     CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
@@ -105,8 +105,8 @@ Section -post SEC0001
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoRepair 1
     WriteRegStr HKCR "giracoin" "URL Protocol" ""
     WriteRegStr HKCR "giracoin" "" "URL:Giracoin"
-    WriteRegStr HKCR "giracoin\DefaultIcon" "" $INSTDIR\giracoin-qt
-    WriteRegStr HKCR "giracoin\shell\open\command" "" '"$INSTDIR\giracoin-qt" "%1"'
+    WriteRegStr HKCR "giracoin\DefaultIcon" "" $INSTDIR\giracoin-qt.exe
+    WriteRegStr HKCR "giracoin\shell\open\command" "" '"$INSTDIR\giracoin-qt.exe" "%1"'
 SectionEnd
 
 # Macro for selecting uninstaller sections
@@ -124,7 +124,7 @@ done${UNSECTION_ID}:
 
 # Uninstaller sections
 Section /o -un.Main UNSEC0000
-    Delete /REBOOTOK $INSTDIR\giracoin-qt
+    Delete /REBOOTOK $INSTDIR\giracoin-qt.exe
     Delete /REBOOTOK $INSTDIR\COPYING.txt
     Delete /REBOOTOK $INSTDIR\readme.txt
     RMDir /r /REBOOTOK $INSTDIR\daemon
@@ -136,7 +136,7 @@ Section -un.post UNSEC0001
     DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk"
-    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Giracoin Core (testnet, -bit).lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Giracoin Core (testnet, 32-bit).lnk"
     Delete /REBOOTOK "$SMSTARTUP\Giracoin.lnk"
     Delete /REBOOTOK $INSTDIR\uninstall.exe
     Delete /REBOOTOK $INSTDIR\debug.log
@@ -158,7 +158,7 @@ SectionEnd
 # Installer functions
 Function .onInit
     InitPluginsDir
-!if "" == "64"
+!if "32" == "64"
     ${If} ${RunningX64}
       ; disable registry redirection (enable access to 64-bit portion of registry)
       SetRegView 64
